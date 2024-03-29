@@ -19,6 +19,7 @@
         fzf_configure_bindings --history=\\cr
         fzf_configure_bindings --variables=\\cv
         fzf_configure_bindings --processes=\\cp
+        source ~/.nix-profile/etc/profile.d/nix.fish
       ";
       shellAbbrs = {
         hms = "home-manager switch";

@@ -1,9 +1,11 @@
 { inputs, lib, config, pkgs, ... }: {
 
   imports = [
-#    inputs.nixvim.homeManagerModules.nixvim
+    ./neo-tree.nix
+    ./neogit.nix
+    ./nvim-cmp.nix
   ];
-
+  
   programs.nixvim = {
     enable = true;
     viAlias = true;
@@ -33,7 +35,18 @@
       # UI
       lualine.enable = true;
       bufferline.enable = true;
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        	indent = true;
+          ensureInstalled = [
+            "javascript"
+            "nix"
+            "tsx"
+            "typescript"
+            "vim"
+            "vimdoc"
+          ];
+      };
       which-key = {
         enable = true;
       };
@@ -51,6 +64,10 @@
       telescope = {
         enable = true;
         keymaps = {
+          "<leader>b" = {
+            desc = "buffer finder";
+            action = "buffers";
+          };
           "<leader>ff" = {
             desc = "file finder";
             action = "find_files";

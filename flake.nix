@@ -33,7 +33,7 @@
             ./fish.nix 
             ./starship.nix 
             ./direnv.nix 
-            ./nvim.nix 
+            ./nvim 
 
             nixvim.homeManagerModules.nixvim
        ];
