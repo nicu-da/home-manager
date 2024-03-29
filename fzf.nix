@@ -1,7 +1,7 @@
 {
   programs.fzf = {
     enable = true;
-    defaultCommand = "rg --hidden --files";
-    fileWidgetCommand = "rg --hidden --files";
+    defaultCommand = "fd --type file --hidden --no-ignore";
+    fileWidgetCommand = "fd --type file --hidden --no-ignore";
   };
 }
