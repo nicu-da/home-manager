@@ -4,6 +4,7 @@
       enable = true;
       interactiveShellInit = "
         set fish_greeting
+        set fzf_fd_opts --hidden
       ";
       plugins = [
         {
@@ -20,6 +21,7 @@
         fzf_configure_bindings --variables=\\cv
         fzf_configure_bindings --processes=\\cp
         source ~/.nix-profile/etc/profile.d/nix.fish
+        set fzf_fd_opts --hidden
       ";
       shellAbbrs = {
         hms = "home-manager switch";

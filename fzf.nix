@@ -1,7 +1,13 @@
-{
+{pkgs, ...}: {
   programs.fzf = {
     enable = true;
-    defaultCommand = "rg --hidden --files";
-    fileWidgetCommand = "rg --hidden --files";
+
+    defaultCommand = "${pkgs.fd}/bin/fd --hidden --type f";
+    fileWidgetCommand = "${pkgs.fd}/bin/fd --hidden --type f";
+    changeDirWidgetCommand = "${pkgs.fd}/bin/fd --hidden --type d";
+    
   };
+
+  home.file = { ".fdignore" = { text = ''.cache''; executable = false; };};
+
 }

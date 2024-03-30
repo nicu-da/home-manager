@@ -28,9 +28,9 @@
         # the path to your home.nix.
         modules = [ 
             ./home.nix 
+            ./fish.nix 
             ./tmux.nix 
             ./fzf.nix 
-            ./fish.nix 
             ./starship.nix 
             ./direnv.nix 
             ./nvim 
