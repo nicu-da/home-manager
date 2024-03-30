@@ -27,7 +27,7 @@
 
     # Keymaps
     globals = {
-      mapleader = ",";
+      mapleader = " ";
     };
 
     plugins = {
