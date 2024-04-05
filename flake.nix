@@ -42,4 +42,25 @@
         # to pass through arguments to home.nix
       };
     };
+    homeConfigurations."nicu@nicu.reut@digitalasset.com" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs; 
+
+      # Specify your home configuration modules here, for example,
+      # the path to your home.nix.
+      modules = [ 
+          ./home.nix 
+          ./fish.nix 
+          ./tmux.nix 
+          ./fzf.nix 
+          ./starship.nix 
+          ./direnv.nix 
+          ./nvim 
+
+          nixvim.homeManagerModules.nixvim
+     ];
+
+      # Optionally use extraSpecialArgs
+      # to pass through arguments to home.nix
+    };
+  };
 }
