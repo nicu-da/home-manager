@@ -15,7 +15,12 @@
 
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
-      tmuxPlugins.yank
+      {
+        plugin = tmuxPlugins.yank;
+        extraConfig = ''
+          set -g @override_copy_command 'xclip -in -selection clipboard'
+        '';
+      }
       {
         plugin = tmuxPlugins.resurrect;
         extraConfig = ''
@@ -26,6 +31,13 @@
       {
         plugin = tmuxPlugins.continuum;
         extraConfig = ''
+          set -g @resurrect-processes ':all:'
+          ## Restore Vim sessions
+          set -g @resurrect-strategy-vim 'session'
+          ## Restore Neovim sessions
+          set -g @resurrect-strategy-nvim 'session'
+          ## Restore Panes
+          set -g @resurrect-capture-pane-contents 'on'
           set -g @continuum-restore 'on'
           set -g @continuum-save-interval '60' # minutes
         '';
