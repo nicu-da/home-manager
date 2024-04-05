@@ -41,7 +41,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
     };
-    homeConfigurations."nicu@nicu.reut@digitalasset.com" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."nicu@nicureut-da-latitude" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs; 
 
       # Specify your home configuration modules here, for example,
