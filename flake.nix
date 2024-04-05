@@ -40,7 +40,6 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-      };
     };
     homeConfigurations."nicu@nicu.reut@digitalasset.com" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs; 
